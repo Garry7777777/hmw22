@@ -1,6 +1,6 @@
-package org.garry.skypro.dao;
-import org.garry.skypro.model.Employee;
+package org.skypro.garry.dao;
 
+import org.skypro.garry.model.*;
 import java.util.List;
 
     public interface EmployeeDAO {

@@ -1,8 +1,11 @@
-package org.garry.skypro.dao;
+package org.skypro.garry.dao;
 
-import org.garry.skypro.model.*;
-import org.hibernate.*;
-import java.util.*;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.skypro.garry.config.HibernateSessionFactoryUtil;
+import org.skypro.garry.model.Employee;
+
+import java.util.List;
 
 public class EmployeeDAOimpl implements EmployeeDAO {
     public EmployeeDAOimpl() { }

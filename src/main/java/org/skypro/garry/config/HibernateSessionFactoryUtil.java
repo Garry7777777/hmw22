@@ -1,6 +1,6 @@
-package org.garry.skypro.dao;
+package org.skypro.garry.config;
 
-import org.garry.skypro.model.Employee;
+import org.skypro.garry.model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -15,12 +15,13 @@ public class HibernateSessionFactoryUtil {
             if (sessionFactory == null) {
                 Configuration configuration = new Configuration().configure();
                 configuration.addAnnotatedClass(Employee.class);
+                configuration.addAnnotatedClass(City.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
 
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             }
         }catch (Exception e){
-            System.out.println("Исключение!?");
+            e.printStackTrace();
         }
         return sessionFactory;
     }
